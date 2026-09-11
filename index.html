@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="carro.css">
     <script src="carro.js" defer></script>
@@ -28,7 +28,7 @@
             </nav>
             <nav class="nav__celula">
                 <div class="botao__celula">
-                    <button style="border: none; transition: 0s;" onclick="buton()">☰</button>
+                    <button style="border: none; transition: 0s; background: none;" onclick="buton()">☰</button>
                 </div>
                 <div class="links">
                     <a href="#">HISTÓRIA</a>
@@ -53,7 +53,7 @@
                 <hr>
                 <p>O equilíbrio perfeito entre potência, precisão e emoção. O M3 E92 não é apenas um carro, é uma
                     experiência que define gerações.</p>
-                <button>CONHEÇA A LENDA</button>
+                <button class="lenda">CONHEÇA A LENDA</button>
             </div>
         </div>
 
@@ -239,7 +239,160 @@
         </div>
     </section>
 
-    
+    <section class="section4">
+        <div class="fundo__sessão4">
+            <img src="conteudos-extra/fundo-cinza.png" alt="">
+        </div>
+        <div class="botoes">
+            <button onclick="volta()"><img width="30" height="30" src="https://img.icons8.com/3d-fluency/94/left.png"
+                    alt="left" /></button>
+            <button onclick="passa()"><img width="30" height="30" src="https://img.icons8.com/3d-fluency/94/right.png"
+                    alt="right" /></button>
+        </div>
+
+        <div class="numerador">
+            <div class="numero">
+                01
+            </div>
+            <div class="barra">
+                <div class="barras ativo"></div>
+                <div class="barras"></div>
+                <div class="barras"></div>
+            </div>
+        </div>
+        <div class="slids">
+            <div class="slid ativo">
+                <div class="Imagem__sessão4">
+                    <img src="conteudos-extra/motor.png" alt="motor">
+                </div>
+
+                <div class="texto__sessão4">
+                    <h1>BMW M3 E92</h1>
+                    <h2>ALTA ROTAÇÃO</h2>
+                    <h3>V8 4.0 — S65</h3>
+                    <p>Engenharia de alta rotação,
+                        precisão e desempenho em sua essência.</p>
+                </div>
+            </div>
+            <div class="slid">
+                <div class="Imagem__sessão4">
+                    <img class="roda" src="conteudos-extra/roda.png" alt="roda">
+                </div>
+
+                <div class="texto__sessão4">
+                    <h1>BMW M3 E92</h1>
+                    <h2>ADERÊNCIA</h2>
+                    <h3>PRECISÃO E CONTROLE</h3>
+                    <p>Aderência e estabilidade para dominar cada curva.</p>
+                </div>
+            </div>
+            <div class="slid">
+                <div class="Imagem__sessão4">
+                    <img src="conteudos-extra/freio.png" alt="roda">
+                </div>
+
+                <div class="texto__sessão4">
+                    <h1>BMW M3 E92</h1>
+                    <h2>FRENAGEM</h2>
+                    <h3>CONTROLE ABSOLUTO</h3>
+                    <p>Resposta precisa em cada curva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section5">
+
+
+        <div class="galeria__foto__principal">
+
+            <div class="Imagem__grande">
+                <img src="conteudos-extra/Imagem_principal.png" alt="">
+
+                <div class="Titulo__sessão5">
+                    <h3>GALERIA</h3>
+                    <h2>BMW M3 E92</h2>
+                    <h3>ÍCONE. PERFORMANCE. O TEMPO NÃO APAGA.</h3>
+                </div>
+            </div>
+
+            <div class="todas__imagens">
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img1.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Vista Frontal <span>01</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img2.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Vista Lateral<span>02</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img3.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Vista Traseira <span>03</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img4.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Detalhe do Farol <span>04</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img5.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Interior <span>05</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img6.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Roda <span>06</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img7.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Motor V8 4.0L <span>07</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+                <div class="foto__galeria">
+                    <div class="galeria__img">
+                        <img src="conteudos-extra/img8.png" alt="">
+                    </div>
+                    <div class="galeria__texto">
+                        <h2>Detalhe Lateral<span>08</span></h2>
+                        <p>Branco Alpine</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 </body>
 <script src="https://unpkg.com/scrollreveal"></script>

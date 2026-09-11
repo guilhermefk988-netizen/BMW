@@ -117,4 +117,38 @@ function buton(){
     celulaMenu.style.display = celulaMenu.style.display === "flex" ? "none" : "flex"
 }
 
+const slid = document.querySelectorAll('.slid')
+let numero = 0
+const barra = document.querySelectorAll('.barras')
 
+function passa(){
+
+   const ativo = document.querySelector('.slid.ativo')
+   ativo.classList.remove('ativo')
+
+if(numero > 1){numero = 0}else{numero = numero + 1}
+
+const barraAtiva = document.querySelector('.barras.ativo')
+   barraAtiva.classList.remove('ativo')
+
+barra[numero].classList.add('ativo')
+
+slid[numero].classList.add('ativo')
+document.querySelector('.numero').innerHTML = '0' + (numero + 1)
+;}
+
+function volta(){
+    numero = numero - 1
+   const ativo = document.querySelector('.slid.ativo')
+   ativo.classList.remove('ativo')
+   
+if(numero <0){numero = 2}
+    else{numero}
+
+const barraAtiva = document.querySelector('.barras.ativo')
+   barraAtiva.classList.remove('ativo')
+
+barra[numero].classList.add('ativo')
+slid[numero].classList.add('ativo')
+document.querySelector('.numero').innerHTML = '0'+ (numero + 1)
+;}

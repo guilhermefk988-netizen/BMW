@@ -20,7 +20,7 @@ button:active {
   height: 10vh;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +66,7 @@ button:active {
   a:hover {
     font-size: clamp(1.1rem, 1.3vw, 2rem);
   }
-  button {
+  .button {
     padding: 0.6vw 0.8vw;
     border: 1px solid rgb(255, 255, 255, 0.9);
     background: none;
@@ -213,20 +213,56 @@ button:active {
         margin-top: 4vh;
         font-size: clamp(0.7rem, 1.2vw, 3rem);
       }
-      button {
-        padding: 0.5vw 2.5vw;
-        background: none;
+
+      .lenda {
+        padding: 0.8vw 2.5vw;
+        background: rgb(255, 255, 255);
         border: none;
-        border-bottom: 1px solid white;
-        color: white;
+        color: rgb(0, 0, 0);
         display: flex;
         align-items: center;
         justify-content: start;
         font-size: clamp(0.8rem, 1vw, 3rem);
         margin-top: 10vh;
-        border-radius: 0 0 0.5vw 0;
+        border-radius: 0.5vw;
+        position: relative;
+        z-index: 1;
+      }
+
+      .lenda::after,
+      .lenda::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 0.5vw;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        translate: -50% -50%;
+        background-image: conic-gradient(
+          from var(--angle),
+          transparent 70%,
+          rgb(255, 255, 255)
+        );
+        border-radius: 0.5vw;
+        animation: gira 1s infinite linear;
+      }
+      .lenda::before {
+        filter: blur(1.5rem);
+        opacity: 1;
       }
     }
+  }
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes gira {
+  to {
+    --angle: 360deg;
   }
 }
 @keyframes carrosel {
@@ -314,18 +350,17 @@ button:active {
         border-radius: 0.2vw;
         transition: color 0.3s;
         position: relative;
-        
+
         z-index: 4;
       }
-      button:hover{
+      button:hover {
         color: black;
-      
       }
-      button:hover::after{
+      button:hover::after {
         height: 100%;
       }
-      button::after{
-        content: '';
+      button::after {
+        content: "";
         transition: 0.5s ease;
         width: 100%;
         height: 0%;
@@ -441,10 +476,9 @@ button:active {
         display: grid;
         width: 100%;
         height: 100%;
-        grid-template-columns: repeat(3, 10vw);
+        grid-template-columns: repeat(3, 25vw);
         align-items: center;
         justify-content: center;
-        gap: 0 20vw;
 
         .carros__historia {
           height: 100%;
@@ -494,24 +528,24 @@ button:active {
     width: 80%;
     height: 80%;
   }
-  .principais__section3{
+  .principais__section3 {
     width: 100%;
     height: 30%;
 
-    h3{
-      font-size: clamp(1rem,1.5vw,2.3rem);
+    h3 {
+      font-size: clamp(1rem, 1.5vw, 2.3rem);
       font-weight: 300;
     }
-    h2{
-      font-size: clamp(2.5rem,5vw,8rem);
+    h2 {
+      font-size: clamp(2.5rem, 5vw, 8rem);
     }
-    p{
-      font-size: clamp(0.7rem,1.5vw,2.2rem);
+    p {
+      font-size: clamp(0.7rem, 1.5vw, 2.2rem);
       white-space: nowrap;
       font-weight: 300;
     }
   }
-  .performance__informações{
+  .performance__informações {
     width: 30%;
     height: 70%;
     display: flex;
@@ -521,7 +555,7 @@ button:active {
     gap: 1vw;
     border-left: 1px solid rgba(255, 255, 255, 0.397);
   }
-  .informações__da__performance{
+  .informações__da__performance {
     width: 90%;
     height: 25%;
     border-bottom: 1px solid white;
@@ -529,40 +563,242 @@ button:active {
     justify-content: center;
     flex-direction: column;
 
-    p{
+    p {
       white-space: nowrap;
-      font-size: clamp(0.7rem,1vw,2rem);
+      font-size: clamp(0.7rem, 1vw, 2rem);
       font-weight: 200;
     }
-    h2{
+    h2 {
       white-space: nowrap;
-      font-size: clamp(1.5rem,2.5vw,3.5rem);
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+      font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     }
   }
 }
-
-.section4{
+.section4 {
   width: 100%;
   height: 100vh;
-  background: blue;
   position: relative;
   overflow: hidden;
 
-  .video3{
+  .fundo__sessão4 {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    video{
-      object-fit: cover;
+    z-index: -1;
+
+    img {
       width: 100%;
       height: 100%;
     }
   }
-  .imagem__carro{
+  .slids {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+  }
+  .slid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 15;
+    display: flex;
+  }
+  .slid.ativo {
+    .texto__sessão4 {
+      p {
+        transform: translateX(0);
+      }
+      h1 {
+        transform: translateX(0);
+      }
+      h2 {
+        transform: translateX(0);
+      }
+      h3 {
+        transform: translateX(0);
+      }
+    }
+
+    img:nth-child(1) {
+      transform: translateX(0vw);
+    }
+  }
+
+  .Imagem__sessão4 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: auto;
+      animation: sombra 20s infinite linear;
+      filter: drop-shadow(0 0 10px black);
+      transform: translateX(100vw);
+      transition: 0.5s;
+    }
+    img:nth-child(1) {
+      transform: rotate(0deg);
+      transform: translateX(100vw);
+    }
+  }
+
+  .texto__sessão4 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Orbitron", sans-serif;
+    gap: 0.3vw;
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 0 5px black;
+
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: clamp(0.7rem, 1.2vw, 2rem);
+      width: 23vw;
+      transition: 1s;
+      transform: translateX(100vw);
+    }
+    h2 {
+      font-size: clamp(3rem, 4vw, 10rem);
+      transform: translateX(100vw);
+      transition: 0.7s;
+    }
+    h1 {
+      font-size: clamp(0.5rem, 2.5vw, 5rem);
+      font-weight: 500;
+      transform: translateX(100vw);
+      transition: 0.8s;
+    }
+    h3 {
+      font-size: clamp(1rem, 2vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.5vw;
+      transform: translateX(100vw);
+      transition: 0.9s;
+    }
+  }
+  .numerador {
+    width: 100%;
+    height: 15vh;
+    position: absolute;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .numero {
+      width: 100%;
+      height: 40%;
+      font-size: clamp(2rem, 3vw, 5rem);
+      font-family: monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .barra {
+      width: 100%;
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1vw;
+
+      .barras.ativo {
+        background: white;
+        box-shadow: 0 0 5px white;
+      }
+      .barras {
+        width: clamp(2rem, 3vw, 5rem);
+        height: 0.4vh;
+        background: rgb(43, 128, 226);
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+      }
+    }
+  }
+  .botoes {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+
+    display: flex;
+    z-index: 100;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5vw;
+
+    button {
+      width: clamp(2rem, 2vw, 4rem);
+      height: clamp(2rem, 2vw, 4rem);
+      font-size: clamp(1rem, 1.5vw, 3rem);
+      color: black;
+      background: rgb(255, 255, 255, 0.5);
+      border-radius: 50%;
+      border: solid 1px white;
+    }
+  }
+}
+@keyframes sombra {
+  0% {
+    filter: drop-shadow(0 0 10px black);
+  }
+  50% {
+    filter: drop-shadow(0 0 30px black);
+  }
+  70% {
+    filter: drop-shadow(0 0 20px black);
+  }
+  100% {
+    filter: drop-shadow(0 0 10px black);
+  }
+}
+
+@media (max-width: 630px) {
+  .section4 {
+    .slids {
+      flex-direction: column;
+    }
+
+    .Imagem__sessão4 {
+      width: 100%;
+      height: 50%;
+
+      img {
+        width: 80%;
+      }
+    }
+    .texto__sessão4 {
+      width: 100%;
+      height: 30%;
+      align-items: center;
+
+      p {
+        width: 50%;
+      }
+    }
+  }
+  .slid {
+    flex-direction: column;
+  }
+}
+
+.section5 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .imagem__carro {
     width: 100%;
     height: 100%;
     position: relative;
@@ -571,7 +807,7 @@ button:active {
     align-items: center;
     justify-content: center;
 
-    img{
+    img {
       width: 100%;
       height: auto;
       position: relative;
@@ -580,43 +816,130 @@ button:active {
       filter: drop-shadow(0 0 100px rgb(5, 5, 5));
     }
   }
-.galeria__foto__principal{
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 255, 0.452);
-  position: relative;
-  z-index: 5;
-  display: flex;
-  align-items: center;
-
-  .Imagem__grande{
-    width: 70%;
-    height: 80%;
-    background: rgba(255, 0, 0, 0.411);
+  .galeria__foto__principal {
+    width: 100%;
+    height: 100vh;
     position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
 
-    img{
-      width: 100%;
-      height: 100%;
-      
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-    }
-    .Titulo__sessão4{
-      width: 100%;
-      height: 30vh;
+    .Imagem__grande {
+      width: 60%;
+      height: 75%;
+      background: rgba(255, 0, 221, 0.411);
+
       position: relative;
-      z-index: 5;
-      background: rgba(0, 128, 0, 0.377);
+
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+      .Titulo__sessão5 {
+        width: 100%;
+        height: 30vh;
+        padding: 1vw 2vw;
+        position: relative;
+        z-index: 5;
+
+        h2 {
+          font-size: 5vw;
+        }
+        h3 {
+          font-size: 1.5vw;
+          font-weight: 100;
+          letter-spacing: 0.5vw;
+        }
+      }
     }
-  }
-  .todas__imagens{
-    width: 30%;
-    height: 100%;
-    background: rgba(0, 255, 255, 0.507);
+    .todas__imagens {
+      width: 40%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 45%);
+      align-items: center;
+      justify-content: center;
+
+      .foto__galeria {
+        width: 90%;
+        height: 22vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+        border-radius: 0.4rem;
+        position: relative;
+        flex-direction: column;
+        overflow: hidden;
+
+        .galeria__img {
+          width: 100%;
+          height: 75%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .galeria__texto {
+          width: 100%;
+          height: 25%;
+          padding: 0 0.3rem;
+
+          h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            justify-content: space-between;
+            font-size: 1.2vw;
+          }
+          p {
+            font-size: 1vw;
+            font-weight: 200;
+          }
+        }
+      }
+      .foto__galeria:hover::after {
+        background: rgb(0, 140, 255);
+      }
+      .foto__galeria::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        filter: blur(0.5rem);
+        padding: 0.6rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
   }
 }
+@media (max-width: 630px) {
+  .section5 {
 
+    .galeria__foto__principal {
+      flex-direction: column;
+      width: 100%;
+      .Imagem__grande {
+        width: 100%;
+        height: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .todas__imagens {
+        width: 100%;
+        height: auto;
+        gap: 1rem;
+      }
+    }
+  }
 }
