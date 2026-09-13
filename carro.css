@@ -644,7 +644,6 @@ button:active {
       transition: 0.5s;
     }
     img:nth-child(1) {
-      transform: rotate(0deg);
       transform: translateX(100vw);
     }
   }
@@ -707,25 +706,6 @@ button:active {
       align-items: center;
       justify-content: center;
     }
-    .barra {
-      width: 100%;
-      height: 60%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1vw;
-
-      .barras.ativo {
-        background: white;
-        box-shadow: 0 0 5px white;
-      }
-      .barras {
-        width: clamp(2rem, 3vw, 5rem);
-        height: 0.4vh;
-        background: rgb(43, 128, 226);
-        box-shadow: 0 0 10px rgb(0, 0, 0);
-      }
-    }
   }
   .botoes {
     width: 100%;
@@ -763,7 +743,25 @@ button:active {
     filter: drop-shadow(0 0 10px black);
   }
 }
+.barra {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
 
+  .barras.ativo {
+    background: white;
+    box-shadow: 0 0 5px white;
+  }
+  .barras {
+    width: clamp(2rem, 3vw, 5rem);
+    height: 0.4vh;
+    background: rgb(43, 128, 226);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+  }
+}
 @media (max-width: 630px) {
   .section4 {
     .slids {
@@ -873,7 +871,6 @@ button:active {
         border-radius: 0.4rem;
         position: relative;
         flex-direction: column;
-        overflow: hidden;
 
         .galeria__img {
           width: 100%;
@@ -894,10 +891,10 @@ button:active {
             align-items: center;
             justify-content: center;
             justify-content: space-between;
-            font-size: 1.2vw;
+            font-size: clamp(0.8rem, 1.2vw, 2rem);
           }
           p {
-            font-size: 1vw;
+            font-size: clamp(0.7rem, 1vw, 2rem);
             font-weight: 200;
           }
         }
@@ -909,8 +906,8 @@ button:active {
         content: "";
         width: 100%;
         height: 100%;
-        filter: blur(0.5rem);
-        padding: 0.6rem;
+        filter: blur(1.5rem);
+
         position: absolute;
         top: 0;
         left: 0;
@@ -921,7 +918,7 @@ button:active {
 }
 @media (max-width: 630px) {
   .section5 {
-
+    height: 130vh;
     .galeria__foto__principal {
       flex-direction: column;
       width: 100%;
@@ -938,6 +935,208 @@ button:active {
         width: 100%;
         height: auto;
         gap: 1rem;
+      }
+    }
+  }
+}
+
+.section6 {
+  width: 100%;
+  height: 100vh;
+  background: rgb(35, 35, 36);
+  position: relative;
+
+  .fundo__section6 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .gradient__imagem {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0, 0.6);
+  }
+  .posição__botoes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    .botoes__section6 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      height: 100%;
+
+      hr {
+        width: 95%;
+      }
+      button {
+        width: clamp(2rem, 2vw, 4rem);
+        height: clamp(2rem, 2vw, 4rem);
+        border-radius: 50%;
+        color: black;
+        border: solid 1px white;
+        background: rgb(255, 255, 255, 0.5);
+        position: relative;
+        transition: 0.5s ease;
+        z-index: 1;
+        transition: 0s transform;
+        z-index: 10;
+      }
+      button:hover::after {
+        width: 100%;
+        height: 100%;
+      }
+      button::after {
+        content: "";
+        width: 0%;
+        height: 0%;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        background: rgba(34, 228, 131, 0.849);
+        transition: 0.5s ease;
+      }
+    }
+  }
+
+  .numeros {
+    width: clamp(15rem, 23vw, 30rem);
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 5;
+
+    .numero {
+      height: 10%;
+      width: 100%;
+      font-size: clamp(1.5rem, 3vw, 5rem);
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      font-family: monospace;
+    }
+    .barrinhas {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      .barras2 {
+        width: clamp(3rem, 3vw, 5rem);
+        height: 0.5vh;
+        background: rgb(43, 128, 226);
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+      }
+      .barras2.ativos {
+        background: white;
+        box-shadow: 0 0 10px rgb(255, 255, 255);
+      }
+    }
+  }
+  .carros__imagens {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .Titulo__carros {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.5s;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+
+      .text__cor {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+          font-size: 12vw;
+          transition: 0.7s;
+        }
+      }
+      .img__carro {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        transform: translateX(100vw);
+        transition: 0.9s;
+
+        img {
+          width: 70%;
+          height: auto;
+          transform: rotate(0deg);
+          transition: 0.5s ease;
+        }
+      }
+    }
+    .Titulo__carros.ativos {
+      opacity: 1;
+
+      .text__cor {
+        h2 {
+          opacity: 1;
+          transform: translateY(-25vh);
+        }
+      }
+      .img__carro {
+        transform: translateX(0vw);
+        img {
+          transform: rotate(-10deg);
+          transition-delay: 0.3s;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .section6{
+
+    .carros__imagens{
+      .Titulo__carros{
+        .img__carro{
+          img{
+            width: 100%;
+          }
+        }
       }
     }
   }

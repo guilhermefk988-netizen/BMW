@@ -152,3 +152,42 @@ barra[numero].classList.add('ativo')
 slid[numero].classList.add('ativo')
 document.querySelector('.numero').innerHTML = '0'+ (numero + 1)
 ;}
+
+
+const barraInativas = document.querySelectorAll('.barras2')
+const slids = document.querySelectorAll('.Titulo__carros')
+let contador = 0
+function passaSlid(){
+
+    const slidPrincipal = document.querySelector('.Titulo__carros.ativos')
+    slidPrincipal.classList.remove('ativos')
+
+const barrinhas = document.querySelector('.barras2.ativos')
+    barrinhas.classList.remove('ativos')
+
+    if(contador >3){contador = 0}else{contador = contador + 1}
+
+    slids[contador].classList.add('ativos')
+
+    barraInativas[contador].classList.add('ativos')
+    
+    document.querySelector('.numero h2').innerHTML = '0' + (contador + 1)
+}
+
+
+function voltaSlid(){
+
+    const slidPrincipal = document.querySelector('.Titulo__carros.ativos')
+    slidPrincipal.classList.remove('ativos')
+contador = contador - 1
+const barrinhas = document.querySelector('.barras2.ativos')
+    barrinhas.classList.remove('ativos')
+
+    if(contador <0){contador = 4}else{contador}
+
+    slids[contador].classList.add('ativos')
+
+    barraInativas[contador].classList.add('ativos')
+    
+    document.querySelector('.numero h2').innerHTML = '0' + (contador + 1)
+}
