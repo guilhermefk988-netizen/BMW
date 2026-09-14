@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +7,9 @@ body {
   font-family: "Inter", sans-serif;
   color: white;
   background: black;
+}
+html{
+  scroll-behavior: smooth;
 }
 button {
   color: white;
@@ -401,6 +403,12 @@ button:active {
         width: 100%;
         height: 40%;
         background: darkorange;
+
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       .texto__imagem {
         width: 100%;
@@ -845,11 +853,11 @@ button:active {
         z-index: 5;
 
         h2 {
-          font-size: 5vw;
+          font-size: clamp(2rem, 5vw, 8rem);
         }
         h3 {
-          font-size: 1.5vw;
-          font-weight: 100;
+          font-size: clamp(0.5rem, 1.5vw, 2.5rem);
+          font-weight: 200;
           letter-spacing: 0.5vw;
         }
       }
@@ -886,6 +894,7 @@ button:active {
           width: 100%;
           height: 25%;
           padding: 0 0.3rem;
+          background: black;
 
           h2 {
             display: flex;
@@ -899,6 +908,9 @@ button:active {
             font-weight: 200;
           }
         }
+      }
+      .foto__galeria:hover {
+        scale: 1.05;
       }
       .foto__galeria:hover::after {
         background: rgb(0, 140, 255);
@@ -1025,7 +1037,6 @@ button:active {
     align-items: end;
     flex-direction: column;
     padding: 1rem;
-    z-index: 5;
 
     .numero {
       height: 10%;
@@ -1105,7 +1116,7 @@ button:active {
           width: 70%;
           height: auto;
           transform: rotate(0deg);
-          transition: 0.5s ease;
+          transition: 0.5s;
         }
       }
     }
@@ -1129,12 +1140,11 @@ button:active {
   }
 }
 @media (max-width: 768px) {
-  .section6{
-
-    .carros__imagens{
-      .Titulo__carros{
-        .img__carro{
-          img{
+  .section6 {
+    .carros__imagens {
+      .Titulo__carros {
+        .img__carro {
+          img {
             width: 100%;
           }
         }
@@ -1142,1148 +1152,107 @@ button:active {
     }
   }
 }
-=======
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: "Inter", sans-serif;
-  color: white;
-  background: black;
-}
-button {
-  color: white;
-  cursor: pointer;
-}
-button:active {
-  transform: translateY(-3px);
-}
-.header {
+
+.footer {
   width: 100%;
-  height: 10vh;
-  position: fixed;
-  top: 0;
-  z-index: 999;
+  height: 100vh;
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgb(0, 0, 0, 0.3);
-
-  .alinhamento__header {
-    width: 90%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  img {
-    width: clamp(5rem, 10vw, 30rem);
-  }
-  .nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3vw;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: clamp(0.9rem, 1.2vw, 2.5rem);
-    transition: 0.4s;
-    position: relative;
-  }
-  a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    height: 0.2vw;
-    background: rgb(50, 129, 248);
-    transition: 0.5s ease;
-  }
-  a:hover::after {
-    width: 100%;
-  }
-  a:hover {
-    font-size: clamp(1.1rem, 1.3vw, 2rem);
-  }
-  .button {
-    padding: 0.6vw 0.8vw;
-    border: 1px solid rgb(255, 255, 255, 0.9);
-    background: none;
-    color: white;
-    font-size: clamp(0.8rem, 1vw, 2rem);
-    font-weight: 520;
-    border-radius: 0.3vw;
-    transition: 0.3s;
-    position: relative;
-    z-index: 3;
-    overflow: hidden;
-  }
-  .button:hover {
-    color: black;
-  }
-  .button:hover::after {
-    width: 110%;
-  }
-  .button::after {
-    content: "";
-    transition: 0.6s ease;
-    border-radius: 5%;
-    z-index: -2;
-    height: 100%;
-    width: 0%;
-    left: 0;
-    bottom: 0;
-    background: rgb(255, 255, 255);
-    position: absolute;
-  }
-
-  .nav__celula {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-direction: column;
-
-    button {
-      width: 100%;
-      padding: 0.9vw 3vw;
-      position: relative;
-      top: 0;
-      font-size: clamp(1.3rem, 2vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .botao__celula {
-      width: 100%;
-      height: 10vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4vw;
-      position: absolute;
-      top: 10vh;
-      background: rgb(0, 0, 0, 0.4);
-      border-radius: 1vw;
-    }
-  }
-}
-.section1 {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  .carrosel {
-    width: 100%;
-    height: 8vh;
-    position: absolute;
-    box-shadow: 0 0 10px black;
-    bottom: 0;
-
-    .posição_carrosel {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .frases {
-      position: absolute;
-      right: 110%;
-      animation: carrosel infinite 21s linear;
-      animation-delay: var(--delay);
-      text-shadow: white 0 0 15px;
-
-      font-size: clamp(1.3rem, 3vw, 5rem);
-    }
-  }
-
-  video {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    object-fit: cover;
-    display: block;
-  }
-  .informações__section1 {
-    width: 50%;
-    height: 100vh;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .informaçao__dentro__da__sessao {
-      width: 90%;
-      height: 70%;
-
-      h3 {
-        font-weight: 100;
-        letter-spacing: 0.5vw;
-        font-size: clamp(1rem, 1.4vw, 3rem);
-      }
-      h2 {
-        font-size: clamp(2rem, 5vw, 7rem);
-
-        background: linear-gradient(
-          180deg,
-          #ffffff 0%,
-          #ededed 45%,
-          #bdbdbd 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      hr {
-        width: 25%;
-        margin-top: 3vh;
-      }
-      p {
-        width: clamp(15rem, 25vw, 35rem);
-        font-weight: 200;
-        margin-top: 4vh;
-        font-size: clamp(0.7rem, 1.2vw, 3rem);
-      }
-
-      .lenda {
-        padding: 0.8vw 2.5vw;
-        background: rgb(255, 255, 255);
-        border: none;
-        color: rgb(0, 0, 0);
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        font-size: clamp(0.8rem, 1vw, 3rem);
-        margin-top: 10vh;
-        border-radius: 0.5vw;
-        position: relative;
-        z-index: 1;
-      }
-
-      .lenda::after,
-      .lenda::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        padding: 0.5vw;
-        top: 50%;
-        left: 50%;
-        z-index: -1;
-        translate: -50% -50%;
-        background-image: conic-gradient(
-          from var(--angle),
-          transparent 70%,
-          rgb(255, 255, 255)
-        );
-        border-radius: 0.5vw;
-        animation: gira 1s infinite linear;
-      }
-      .lenda::before {
-        filter: blur(1.5rem);
-        opacity: 1;
-      }
-    }
-  }
-}
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-@keyframes gira {
-  to {
-    --angle: 360deg;
-  }
-}
-@keyframes carrosel {
-  0% {
-    right: 110%;
-  }
-  100% {
-    right: -110%;
-  }
-}
-.section2 {
-  width: 100%;
-  height: 100vh;
-
-  position: relative;
-
-  .video2 {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    inset: 0;
-    object-fit: cover;
-
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-  }
-  .Informações__historia {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .Informações__dentro__his {
-    width: 95%;
-    height: 30%;
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 6rem);
-      width: 45%;
-    }
-    p {
-      font-size: clamp(0.7rem, 1.2vw, 3rem);
-      font-weight: 200;
-      width: 35%;
-    }
-  }
-  .carros {
-    width: 95%;
-    height: 45%;
-    background: rgb(0, 0, 0, 0.3);
-    border-radius: clamp(1rem, 1vw, 2rem);
-    display: flex;
-
-    .texto__historia {
-      width: 25%;
-      height: 100%;
-      padding: 2.5vw;
-      display: flex;
-      flex-direction: column;
-      gap: 1vw;
-
-      h2 {
-        font-size: clamp(1rem, 2vw, 3.5rem);
-        white-space: nowrap;
-      }
-      p {
-        font-size: clamp(0.7rem, 1.2vw, 2rem);
-        font-weight: 200;
-      }
-      button {
-        background: none;
-        padding: 1vw;
-        font-size: clamp(0.7rem, 0.8vw, 2.5rem);
-        width: clamp(7rem, 18vw, 25rem);
-        white-space: nowrap;
-        border: 1px solid white;
-        border-radius: 0.2vw;
-        transition: color 0.3s;
-        position: relative;
-
-        z-index: 4;
-      }
-      button:hover {
-        color: black;
-      }
-      button:hover::after {
-        height: 100%;
-      }
-      button::after {
-        content: "";
-        transition: 0.5s ease;
-        width: 100%;
-        height: 0%;
-        background: rgb(255, 255, 255);
-        position: absolute;
-        bottom: 0;
-        z-index: -1;
-        left: 0;
-      }
-    }
-
-    .Historia__carros {
-      width: 75%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(0.3rem, 0.3vw, 0.6rem);
-
-      .carros__historia {
-        width: 15vw;
-        height: 90%;
-        border-radius: 1vw;
-        background: rgba(0, 0, 0, 0.247);
-        position: relative;
-      }
-      .data {
-        width: 100%;
-        height: 20%;
-        display: flex;
-        flex-direction: column;
-        padding: 0.3rem 1rem;
-        transition: 0.3s;
-        font-size: clamp(0.6rem, 1.1vw, 2rem);
-      }
-      .imagem {
-        width: 100%;
-        height: 40%;
-        background: darkorange;
-      }
-      .texto__imagem {
-        width: 100%;
-        height: 40%;
-        font-size: clamp(0.7rem, 1.2vw, 2.5rem);
-        font-weight: 200;
-        display: flex;
-        align-items: center;
-      }
-      .circular {
-        width: 1.5vw;
-        height: 1.5vw;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-        border: solid 2px rgb(255, 255, 255);
-      }
-      .circulo {
-        width: 100%;
-        height: 0.5vw;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: 0;
-      }
-    }
-    .carros__historia:hover {
-      .circular {
-        background: white;
-        border: solid 2px rgb(0, 183, 255);
-      }
-      .data {
-        color: rgb(42, 135, 241);
-        text-shadow: 0 0 10px rgb(0, 140, 255);
-      }
-    }
-  }
-}
-@media (max-width: 768px) {
-  .informações__section1 {
-    h2 {
-      width: 80vw;
-    }
-  }
-  .header {
-    .nav {
-      display: none;
-    }
-    .nav__celula {
-      display: flex;
-    }
-  }
-  .section2 {
-    .Informações__historia {
-      .Informações__dentro__his {
-        h2 {
-          width: 90%;
-        }
-        p {
-          width: 40vw;
-        }
-      }
-    }
-    .carros {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 60%;
-      .Historia__carros {
-        display: grid;
-        width: 100%;
-        height: 100%;
-        grid-template-columns: repeat(3, 25vw);
-        align-items: center;
-        justify-content: center;
-
-        .carros__historia {
-          height: 100%;
-          width: 20vw;
-          .data {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            flex-direction: row;
-          }
-        }
-      }
-      .texto__historia {
-        display: none;
-      }
-    }
-  }
-}
-
-.section3 {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-
-  .imagem__carro {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .informações__section3 {
-    width: 50%;
-    height: 100%;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .informações__dentro__sessão3 {
-    width: 80%;
-    height: 80%;
-  }
-  .principais__section3 {
-    width: 100%;
-    height: 30%;
-
-    h3 {
-      font-size: clamp(1rem, 1.5vw, 2.3rem);
-      font-weight: 300;
-    }
-    h2 {
-      font-size: clamp(2.5rem, 5vw, 8rem);
-    }
-    p {
-      font-size: clamp(0.7rem, 1.5vw, 2.2rem);
-      white-space: nowrap;
-      font-weight: 300;
-    }
-  }
-  .performance__informações {
-    width: 30%;
-    height: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1vw;
-    border-left: 1px solid rgba(255, 255, 255, 0.397);
-  }
-  .informações__da__performance {
-    width: 90%;
-    height: 25%;
-    border-bottom: 1px solid white;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    p {
-      white-space: nowrap;
-      font-size: clamp(0.7rem, 1vw, 2rem);
-      font-weight: 200;
-    }
-    h2 {
-      white-space: nowrap;
-      font-size: clamp(1.5rem, 2.5vw, 3.5rem);
-      font-family:
-        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    }
-  }
-}
-.section4 {
-  width: 100%;
-  height: 100vh;
-  position: relative;
+  flex-direction: column;
   overflow: hidden;
 
-  .fundo__sessão4 {
+  .fundo__footer{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     z-index: -1;
-
-    img {
+    img{
       width: 100%;
       height: 100%;
     }
   }
-  .slids {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-  }
-  .slid {
+  .gradient{
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
-    z-index: 15;
-    display: flex;
+    background: rgb(0, 0, 0,0.6);
+    z-index: 1;
   }
-  .slid.ativo {
-    .texto__sessão4 {
-      p {
-        transform: translateX(0);
-      }
-      h1 {
-        transform: translateX(0);
-      }
+  .logos__footer{
+    display: flex;
+
+    img{
+      width: 25%;
+      height: auto;
+    }
+  }
+  .colunas {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    .coluna {
+      width: 20vw;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1rem;
+
       h2 {
-        transform: translateX(0);
+        font-size: clamp(1.5rem, 3vw, 5rem);
+        margin-bottom: 1rem;
       }
       h3 {
-        transform: translateX(0);
+        font-size: clamp(1.3rem, 1.6vw, 4rem);
+        font-weight: 500;
       }
-    }
-
-    img:nth-child(1) {
-      transform: translateX(0vw);
-    }
-  }
-
-  .Imagem__sessão4 {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 100%;
-      height: auto;
-      animation: sombra 20s infinite linear;
-      filter: drop-shadow(0 0 10px black);
-      transform: translateX(100vw);
-      transition: 0.5s;
-    }
-    img:nth-child(1) {
-      transform: translateX(100vw);
-    }
-  }
-
-  .texto__sessão4 {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: "Orbitron", sans-serif;
-    gap: 0.3vw;
-    position: relative;
-    z-index: 10;
-    text-shadow: 0 0 5px black;
-
-    p {
-      font-family: "Poppins", sans-serif;
-      font-size: clamp(0.7rem, 1.2vw, 2rem);
-      width: 23vw;
-      transition: 1s;
-      transform: translateX(100vw);
-    }
-    h2 {
-      font-size: clamp(3rem, 4vw, 10rem);
-      transform: translateX(100vw);
-      transition: 0.7s;
-    }
-    h1 {
-      font-size: clamp(0.5rem, 2.5vw, 5rem);
-      font-weight: 500;
-      transform: translateX(100vw);
-      transition: 0.8s;
-    }
-    h3 {
-      font-size: clamp(1rem, 2vw, 3rem);
-      font-weight: 400;
-      letter-spacing: 0.5vw;
-      transform: translateX(100vw);
-      transition: 0.9s;
-    }
-  }
-  .numerador {
-    width: 100%;
-    height: 15vh;
-    position: absolute;
-    bottom: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    .numero {
-      width: 100%;
-      height: 40%;
-      font-size: clamp(2rem, 3vw, 5rem);
-      font-family: monospace;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  .botoes {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-
-    display: flex;
-    z-index: 100;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5vw;
-
-    button {
-      width: clamp(2rem, 2vw, 4rem);
-      height: clamp(2rem, 2vw, 4rem);
-      font-size: clamp(1rem, 1.5vw, 3rem);
-      color: black;
-      background: rgb(255, 255, 255, 0.5);
-      border-radius: 50%;
-      border: solid 1px white;
-    }
-  }
-}
-@keyframes sombra {
-  0% {
-    filter: drop-shadow(0 0 10px black);
-  }
-  50% {
-    filter: drop-shadow(0 0 30px black);
-  }
-  70% {
-    filter: drop-shadow(0 0 20px black);
-  }
-  100% {
-    filter: drop-shadow(0 0 10px black);
-  }
-}
-.barra {
-  width: 100%;
-  height: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1vw;
-
-  .barras.ativo {
-    background: white;
-    box-shadow: 0 0 5px white;
-  }
-  .barras {
-    width: clamp(2rem, 3vw, 5rem);
-    height: 0.4vh;
-    background: rgb(43, 128, 226);
-    box-shadow: 0 0 10px rgb(0, 0, 0);
-  }
-}
-@media (max-width: 630px) {
-  .section4 {
-    .slids {
-      flex-direction: column;
-    }
-
-    .Imagem__sessão4 {
-      width: 100%;
-      height: 50%;
-
-      img {
-        width: 80%;
-      }
-    }
-    .texto__sessão4 {
-      width: 100%;
-      height: 30%;
-      align-items: center;
-
       p {
-        width: 50%;
+        font-size: clamp(0.7rem, 1.5vw, 2.5rem);
+        font-weight: 300;
       }
     }
   }
-  .slid {
+  .privacidade {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
     flex-direction: column;
-  }
-}
-
-.section5 {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-
-  .imagem__carro {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 3;
-    display: flex;
-    align-items: center;
     justify-content: center;
-
-    img {
+    padding: 0 2rem;
+    gap: 0.3rem;
+    hr{
       width: 100%;
-      height: auto;
-      position: relative;
-      z-index: 5;
-      object-fit: cover;
-      filter: drop-shadow(0 0 100px rgb(5, 5, 5));
+      border: solid rgb(196, 195, 197) 1px;
     }
-  }
-  .galeria__foto__principal {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-
-    .Imagem__grande {
-      width: 60%;
-      height: 75%;
-
-      position: relative;
-
-      img {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        object-fit: cover;
-      }
-      .Titulo__sessão5 {
-        width: 100%;
-        height: 30vh;
-        padding: 1vw 2vw;
-        position: relative;
-        z-index: 5;
-
-        h2 {
-          font-size: 5vw;
-        }
-        h3 {
-          font-size: 1.5vw;
-          font-weight: 100;
-          letter-spacing: 0.5vw;
-        }
-      }
-    }
-    .todas__imagens {
-      width: 40%;
-      height: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 45%);
-      align-items: center;
-      justify-content: center;
-
-      .foto__galeria {
-        width: 90%;
-        height: 22vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: black;
-        border-radius: 0.4rem;
-        position: relative;
-        flex-direction: column;
-
-        .galeria__img {
-          width: 100%;
-          height: 75%;
-
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .galeria__texto {
-          width: 100%;
-          height: 25%;
-          padding: 0 0.3rem;
-
-          h2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            justify-content: space-between;
-            font-size: clamp(0.8rem, 1.2vw, 2rem);
-          }
-          p {
-            font-size: clamp(0.7rem, 1vw, 2rem);
-            font-weight: 200;
-          }
-        }
-      }
-      .foto__galeria:hover::after {
-        background: rgb(0, 140, 255);
-      }
-      .foto__galeria::after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        filter: blur(1.5rem);
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-    }
-  }
-}
-@media (max-width: 630px) {
-  .section5 {
-    height: 130vh;
-    .galeria__foto__principal {
-      flex-direction: column;
+    p{
       width: 100%;
-      .Imagem__grande {
-        width: 100%;
-        height: 50%;
-
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .todas__imagens {
-        width: 100%;
-        height: auto;
-        gap: 1rem;
-      }
-    }
-  }
-}
-
-.section6 {
-  width: 100%;
-  height: 100vh;
-  background: rgb(35, 35, 36);
-  position: relative;
-
-  .fundo__section6 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .gradient__imagem {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: rgb(0, 0, 0, 0.6);
-  }
-  .posição__botoes {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-
-    .botoes__section6 {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 80%;
-      height: 100%;
-
-      hr {
-        width: 95%;
-      }
-      button {
-        width: clamp(2rem, 2vw, 4rem);
-        height: clamp(2rem, 2vw, 4rem);
-        border-radius: 50%;
-        color: black;
-        border: solid 1px white;
-        background: rgb(255, 255, 255, 0.5);
-        position: relative;
-        transition: 0.5s ease;
-        z-index: 1;
-        transition: 0s transform;
-        z-index: 10;
-      }
-      button:hover::after {
-        width: 100%;
-        height: 100%;
-      }
-      button::after {
-        content: "";
-        width: 0%;
-        height: 0%;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        z-index: -1;
-        background: rgba(34, 228, 131, 0.849);
-        transition: 0.5s ease;
-      }
-    }
-  }
-
-  .numeros {
-    width: clamp(15rem, 23vw, 30rem);
-    height: 60%;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    flex-direction: column;
-    padding: 1rem;
-    z-index: 5;
-
-    .numero {
-      height: 10%;
-      width: 100%;
-      font-size: clamp(1.5rem, 3vw, 5rem);
-      display: flex;
-      align-items: end;
-      justify-content: center;
-      font-family: monospace;
-    }
-    .barrinhas {
-      width: 100%;
-      height: 10%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-
-      .barras2 {
-        width: clamp(3rem, 3vw, 5rem);
-        height: 0.5vh;
-        background: rgb(43, 128, 226);
-        box-shadow: 0 0 10px rgb(0, 0, 0);
-      }
-      .barras2.ativos {
-        background: white;
-        box-shadow: 0 0 10px rgb(255, 255, 255);
-      }
-    }
-  }
-  .carros__imagens {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-    .Titulo__carros {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.5s;
-      position: absolute;
-      top: 0;
-      opacity: 0;
-
-      .text__cor {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        h2 {
-          font-size: 12vw;
-          transition: 0.7s;
-        }
-      }
-      .img__carro {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-
-        transform: translateX(100vw);
-        transition: 0.9s;
-
-        img {
-          width: 70%;
-          height: auto;
-          transform: rotate(0deg);
-          transition: 0.5s ease;
-        }
-      }
-    }
-    .Titulo__carros.ativos {
-      opacity: 1;
-
-      .text__cor {
-        h2 {
-          opacity: 1;
-          transform: translateY(-25vh);
-        }
-      }
-      .img__carro {
-        transform: translateX(0vw);
-        img {
-          transform: rotate(-10deg);
-          transition-delay: 0.3s;
-        }
-      }
+      font-size: clamp(0.6rem,1.2vw,2rem);
     }
   }
 }
+
 @media (max-width: 768px) {
-  .section6{
-
-    .carros__imagens{
-      .Titulo__carros{
-        .img__carro{
-          img{
-            width: 100%;
-          }
-        }
+  .footer {
+    .colunas {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+padding: 5rem;
+      .coluna {
+        width: 100%;
+        height: 50%;
       }
     }
   }
 }
->>>>>>> 38491ffa46ef94865f4ffaf0b8e63cf09adc174b
